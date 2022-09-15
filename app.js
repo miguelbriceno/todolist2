@@ -9,6 +9,7 @@ const colors = require("colors");
 //Inicializacion de Servidor
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
+app.set("view engine", "ejs");
 
 //Ruta raiz
 app.get("/", (req, res)=>{
