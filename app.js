@@ -4,8 +4,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const colors = require("colors");
-// const https = require("https");
-
+const date = require(__dirname + "/date.js"); // Este es un modulo local creado por mi.
 
 //Variables de pruebas
 let hour = new Date().getHours();
@@ -13,16 +12,7 @@ let min = new Date().getMinutes();
 let nuevosItems = [];
 let workItems = [];
 
-//Obtencion de fecha
-let today = new Date();
-
-let options = {
-  weekday: "long",
-  day: "numeric",
-  month: "long"
-};
-
-let day = today.toLocaleDateString("es-CO", options);
+let day = date.date();
 
 //Inicializacion de Servidor
 const app = express();
@@ -40,6 +30,9 @@ app.get("/work", (req, res)=>{
   res.render("list", {horaActual:hour, minutoActual:min, listTittle:"Work", newListItems:workItems});
 })
 
+app.get("/about", (req, res)=>{
+  res.render("about");
+});
 
 //Post de home
 app.post("/", (req, res)=>{
