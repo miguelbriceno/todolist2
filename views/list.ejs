@@ -1,23 +1,23 @@
 <%- include('header'); -%>
 
-    <div class="box" id="heading">
-      <h1><%= listTittle %></h1>
-      <h3>La hora es: <%= horaActual %> : <%= minutoActual %> </h3>
-    </div>
+<div class="box" id="heading">
+  <h1><%= listTittle %></h1>
+  <h3>La hora es: <%= horaActual %> : <%= minutoActual %> </h3>
+</div>
 
-    <div class="box">
-      <% for (let i=0; i<newListItems.length; i++){ %>
-      <div class="item">
-        <input type="checkbox">
-        <p><%= newListItems[i] %></p>
-      </div>
-      <% }; %>
+<div class="box">
+  <% for (let i=0; i<newListItems.length; i++){ %>
+  <div class="item">
+    <input type="checkbox">
+    <p><%= newListItems[i] %></p>
+  </div>
+  <% }; %>
 
-      <form class="item" action="/" method="post">
-        <input type="text" name="newItem" autocomplete="off" placeholder="Nuevo item">
-        <button type="submit" name="listName" value="<%= listTittle %>">+</button>
-      </form>
+  <form class="item" action="/" method="post">
+    <input type="text" name="newItem" autocomplete="off" placeholder="Nuevo item">
+    <button type="submit" name="listName" value="<%= listTittle %>">+</button>
+  </form>
 
-    </div>
+</div>
 
-  <%- include('footer'); -%>
+<%- include('footer'); -%>

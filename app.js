@@ -7,12 +7,13 @@ const colors = require("colors");
 const date = require(__dirname + "/date.js"); // Este es un modulo local creado por mi.
 
 //Variables de pruebas
-let hour = new Date().getHours();
-let min = new Date().getMinutes();
-let nuevosItems = [];
-let workItems = [];
+const hour = new Date().getHours();
+const min = new Date().getMinutes();
+const day = date.date();
 
-let day = date.date();
+//Almacenes de notas
+const nuevosItems = [];
+const workItems = [];
 
 //Inicializacion de Servidor
 const app = express();
@@ -48,9 +49,6 @@ app.post("/", (req, res)=>{
     res.redirect("/");
   }
 });
-
-
-
 
 //Configuracion de puerto escucha del Servidor
 app.listen(3000, ()=>{
